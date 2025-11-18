@@ -84,26 +84,30 @@
     <div class="modalOverlay" id="modalOverlay"></div>
 
     <section class="modal">
-      <div class="modalHandle"></div>
+      <div class="container">
+        <div class="modalHandle"></div>
 
-      <div class="modalContent">
-        <form id="taskForm">
-          <div class="taskFormInputs">
-            <input id="descriptionInput" type="text" placeholder="Description" />
-            <input id="dateInput" type="text" placeholder="Date" />
-          </div>
-          <div class="remindContent">
-            <span>Напомнить мне</span>
-            <label class="toggleWrapper">
-              <input id="toogleInput" type="checkbox" />
-              <span class="toggle"></span>
-            </label>
-          </div>
-          <div class="taskFormButtons">
-            <input id="addBtn" type="submit" value="Add task" />
-            <button id="cancelBtn">Cancel</button>
-          </div>
-        </form>
+        <div class="modalContent">
+          <form id="taskForm">
+            <div class="taskFormInputs">
+              <input id="descriptionInput" type="text" placeholder="Description" />
+              <input id="dateInput" type="text" placeholder="Date" />
+            </div>
+            <div class="remindContent">
+              <span>Remind me</span>
+              <label class="switch">
+                <input id="toogleInput" type="checkbox" />
+                <span class="slider"></span>
+              </label>
+            </div>
+
+            <div class="taskFormButtons">
+              <input id="addBtn" type="submit" value="Add task" />
+              <button id="cancelBtn">Cancel</button>
+            </div>
+
+          </form>
+        </div>
       </div>
     </section>
   </body>

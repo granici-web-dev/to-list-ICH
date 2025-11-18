@@ -171,14 +171,14 @@ body {
 }
 
 .checkbox input {
-  display: none; /* скрываем настоящий чекбокс */
+  display: none; 
 }
 
 .custom-checkbox {
   width: 24px;
   height: 24px;
   background-color: transparent;
-  border: 2px solid #49454f; /* светлая сиреневая подложка */
+  border: 2px solid #49454f; 
   border-radius: 0.2rem;
   display: flex;
   align-items: center;
@@ -187,7 +187,6 @@ body {
   transition: 0.2s;
 }
 
-/* Галочка через SVG */
 .custom-checkbox::after {
   content: '';
   width: 18px;
@@ -201,14 +200,13 @@ body {
   transition: 0.2s;
 }
 
-/* Когда чекбокс активен */
 .checkbox input:checked + .custom-checkbox {
-  background-color: #d0bcff; /* сиреневая заливка */
+  background-color: #d0bcff;
   border: none;
 }
 
 .checkbox input:checked + .custom-checkbox::after {
-  opacity: 1; /* показываем галочку */
+  opacity: 1; 
 }
 
 .isTaskActive {
@@ -253,11 +251,11 @@ body {
 }
 
 .modalHandle {
-  width: 44px;
+  width: 32px;
   height: 4px;
   background: #79747E;
-  border-radius: 2px;
-  margin: 0 auto 20px;
+  border-radius: 6remg;
+  margin: 0 auto 1.1rem;
 }
 
 #descriptionInput,
@@ -315,3 +313,52 @@ body {
   background-color: transparent;
   border: 1px solid #79747E;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 52px;
+  height: 32px;
+  cursor: pointer;
+}
+
+.switch input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: #E6E0E9;
+  border: 2px solid #79747E;
+  transition: 0.25s ease;
+}
+
+
+.slider::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: #79747E; 
+  background-repeat: no-repeat;
+  background-position: center;
+  background-image: url("/assets/icons/checkbox-close.svg");
+  transition: 0.25s ease;
+}
+
+.switch input:checked + .slider {
+  background: #6750A4;
+  border-color: transparent;
+}
+
+.switch input:checked + .slider::after {
+  transform: translateX(20px);
+  background-color: #fff;
+  background-image: url("/assets/icons/checkbox-check.svg");
+}
+
