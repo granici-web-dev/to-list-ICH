@@ -26,7 +26,8 @@
       <div class="container">
         <div class="searchInner">
           <form id="seachForm">
-            <input type="search" class="searchInput" placeholder="Search">
+            <input type="search" id="searchInput" name="search" placeholder="Search" />
+            <img src="/assets/icons/search-icon.svg" alt="" class="searchIcon" />
           </form>
         </div>
       </div>
@@ -35,9 +36,9 @@
     <seaction class="filter">
       <div class="container">
         <div class="filerInner">
-          <button id="allFilterBtn">All</button>
-          <button id="activeFilterBtn">Active</button>
-          <button id="completedFilterBtn">Completed</button>
+          <button class="allFilterBtn isActiveFilterBtn" class="">All</button>
+          <button class="activeFilterBtn">Active</button>
+          <button class="completedFilterBtn">Completed</button>
         </div>
       </div>
     </seaction>
@@ -45,40 +46,40 @@
     <section class="toDoList">
       <div class="container">
         <div class="toDolistInner">
-
           <div class="toDolistItem isActive">
             <div class="toDolistItemLeft">
-              <input type="checkbox">
+              <label class="checkbox">
+                <input type="checkbox" />
+                <span class="custom-checkbox"></span>
+              </label>
             </div>
-            <div class="toDolistItemRight">
-              <p class="toDolistItemRightDate">
-                10 Jan, 11:30
-              </p>
-              <p class="toDolistItemRightTask">
-                Feed the cat
-              </p>
+            <div class="toDolistItemRight isTaskActive">
+              <p class="toDolistItemRightDate">10 Jan, 11:30</p>
+              <p class="toDolistItemRightTask">Feed the cat</p>
             </div>
           </div>
 
-          <div class="toDolistItem isInactive">
+          <div class="toDolistItem">
             <div class="toDolistItemLeft">
-              <input type="checkbox" checked>
+              <label class="checkbox">
+                <input type="checkbox" />
+                <span class="custom-checkbox"></span>
+              </label>
             </div>
             <div class="toDolistItemRight">
-              <p class="toDolistItemRightDate">
-                10 Jan, 11:30
-              </p>
-              <p class="toDolistItemRightTask">
-                Feed the cat
-              </p>
+              <p class="toDolistItemRightDate">10 Jan, 11:30</p>
+              <p class="toDolistItemRightTask">Feed the cat</p>
             </div>
           </div>
-
         </div>
       </div>
     </section>
 
-    
+    <div class="container">
+      <button class="createNewTaskBtn">
+        <img src="/assets/icons/pencil.svg" alt="">
+      </button>
+    </div>
   </body>
   <script src="/scripts/script.js"></script>
 </html>
