@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <section class="date">
+      <div class="container">
+        <div class="dateInner">
+          <p class="dayOfWeek">Wendsey</p>
+          <p class="currentDate">3 December</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="search">
+      <div class="container">
+        <div class="searchInner">
+          <form id="seachForm">
+            <input type="search" class="searchInput" placeholder="Search">
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <seaction class="filter">
+      <div class="container">
+        <div class="filerInner">
+          <button id="allFilterBtn">All</button>
+          <button id="activeFilterBtn">Active</button>
+          <button id="completedFilterBtn">Completed</button>
+        </div>
+      </div>
+    </seaction>
+
+    <section class="toDoList">
+      <div class="container">
+        <div class="toDolistInner">
+
+          <div class="toDolistItem isActive">
+            <div class="toDolistItemLeft">
+              <input type="checkbox">
+            </div>
+            <div class="toDolistItemRight">
+              <p class="toDolistItemRightDate">
+                10 Jan, 11:30
+              </p>
+              <p class="toDolistItemRightTask">
+                Feed the cat
+              </p>
+            </div>
+          </div>
+
+          <div class="toDolistItem isInactive">
+            <div class="toDolistItemLeft">
+              <input type="checkbox" checked>
+            </div>
+            <div class="toDolistItemRight">
+              <p class="toDolistItemRightDate">
+                10 Jan, 11:30
+              </p>
+              <p class="toDolistItemRightTask">
+                Feed the cat
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    
+  </body>
+  <script src="/scripts/script.js"></script>
+</html>
