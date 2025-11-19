@@ -209,7 +209,7 @@ body {
   opacity: 1; 
 }
 
-.isTaskActive {
+.isTaskCompleted {
   opacity: 0.5;
 
   .toDolistItemRightTask {
@@ -226,6 +226,12 @@ body {
   position: fixed;
   bottom: 1rem;
   right: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.createNewTaskBtn:hover{
+  background-color: #d2aff3;
 }
 
 
@@ -305,6 +311,7 @@ body {
   font-weight: 500;
   border-radius: 6.2rem;
   border: none;
+  cursor: pointer;
 }
 
 #addBtn{
@@ -316,6 +323,11 @@ body {
   color: #6750A4;
   background-color: transparent;
   border: 1px solid #79747E;
+}
+
+#cancelBtn:hover{
+  background-color: #6750A4;
+  color: #fff;
 }
 
 .switch {
