@@ -11,7 +11,6 @@ const completedFilterBtn = document.querySelector('.completedFilterBtn'); // к�
 const taskForm = document.querySelector('#taskForm');
 const descriptionTaskInput = document.querySelector('#descriptionInput'); // инпут таска
 const dateTaskInput = document.querySelector('#dateInput'); // инпут дата
-// const addTaskBtn = document.querySelector('#addBtn') // кнопка при клике будет добавляться таск
 const cancelTaskBtn = document.querySelector('#cancelBtn');
 const toDolistInner = document.querySelector('.toDolistInner'); // родитель, где будет рендерится таск
 
@@ -24,14 +23,12 @@ const modal = document.querySelector('.modal'); // Само модальное �
 const toDolistItemRightDate = document.querySelector('.toDolistItemRightDate');
 const toDolistItemRightTask = document.querySelector('.toDolistItemRightTask');
 
-// Присвамваем значение value переменным
-
 
 // Читаем таски из localStorage
 let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
 
 // Ищем текущий таск
-// const currentTask = tasks.find((task) => task.id === tasks.id) || null;
+// const currentTask = tasks.find((task) => task.id === currentId) || null;
 
 
 // Получаем день недели
@@ -64,6 +61,7 @@ const monthName = months[date.getMonth()]; // Получить название 
 document.addEventListener('DOMContentLoaded', () => {
   dayOfWeek.textContent = date.toLocaleString('en-US', options);
   currentDate.textContent = `${dayOfMonth} ${monthName}`;
+  renderTasks();
 });
 
 // Событие при клике на Create Task, открываем модальное окно
@@ -92,6 +90,39 @@ function createTask() {
   }
 }
 
+function renderTasks() {
+  toDolistInner.innerHTML = ''; // Очищаем перед рендером
+
+  tasks.forEach((task) => {
+    const taskEl = document.createElement('div');
+    taskEl.classList.add('toDolistItem');
+    taskEl.dataset.id = task.id;
+
+    // если completed = true
+    // const rightBlockClass = task.completed
+    //   ? 'toDolistItemRight isTaskCompleted'
+    //   : 'toDolistItemItemRight';
+
+    taskEl.innerHTML = `
+      <div class="toDolistItemLeft">
+        <label class="checkbox">
+          <input type="checkbox" ${task.completed ? 'checked' : ''}/>
+          <span class="custom-checkbox"></span>
+        </label>
+      </div>
+
+      <div class="toDolistItemRight ${task.completed ? 'isTaskCompleted' : ''}">
+        <p class="toDolistItemRightDate">${task.data}</p>
+        <p class="toDolistItemRightTask">${task.title}</p>
+      </div>
+    `;
+
+    toDolistInner.appendChild(taskEl);
+    
+  });
+}
+
+
 // Закрывает модальное окно
 cancelTaskBtn.addEventListener('click', () => {
   modalOverlay.classList.add('hidden');
@@ -105,4 +136,5 @@ taskForm.addEventListener('submit', (event) => {
   event.preventDefault();
 
   createTask();
+  renderTasks();
 });
