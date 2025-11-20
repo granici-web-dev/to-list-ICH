@@ -319,6 +319,10 @@ body {
   color: #fff;
 }
 
+#addBtn:hover{
+  background-color: #503795;
+}
+
 #cancelBtn{
   color: #6750A4;
   background-color: transparent;
